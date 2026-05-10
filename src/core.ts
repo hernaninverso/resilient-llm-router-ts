@@ -320,14 +320,23 @@ class Router {
     }
 }
 
-function router(state: "memory" | State = "memory", opts: Omit<RouterOptions, "state"> = {}): Router {
+function router(state: "memory" | string | State = "memory", opts: Omit<RouterOptions, "state"> = {}): Router {
     let resolved: State;
     if (typeof state === "string") {
         if (state === "memory") {
             resolved = new MemoryState();
+        } else if (state.startsWith("sqlite:")) {
+            // Lazy require so consumers that only use MemoryState don't pull in
+            // the better-sqlite3 native dependency at load time.
+            // eslint-disable-next-line @typescript-eslint/no-require-imports
+            const { SqliteState } = require("./sqlite_state") as typeof import("./sqlite_state");
+            const dbPath = state.slice("sqlite:".length) || ":memory:";
+            resolved = new SqliteState(dbPath);
+            // Caller MUST call `await router.state.init()` separately to open
+            // the connection and ensure the schema.
         } else {
             throw new Error(
-                `Unknown state backend: ${state}. Pass "memory" or a State instance.`,
+                `Unknown state backend: ${state}. Pass "memory", "sqlite:/path", or a State instance.`,
             );
         }
     } else {

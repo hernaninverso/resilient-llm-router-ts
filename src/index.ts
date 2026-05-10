@@ -12,6 +12,7 @@ export type {
     Decision, SkipKind, RouterOptions, GuardArgs, RecordOutcomeArgs,
 } from "./core";
 export { MemoryState } from "./state";
+export { SqliteState } from "./sqlite_state";
 export type { State, RateLimitRow, QuotaRow, CircuitRow } from "./state";
 export { parseHeaders, isEmpty as isHeaderInsightEmpty } from "./headers";
 export type { HeaderInsight } from "./headers";

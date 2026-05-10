@@ -179,7 +179,6 @@ describe("router() factory", () => {
     });
 
     test("rejects unknown backend strings", () => {
-        // @ts-expect-error testing runtime guard
         expect(() => router("postgres://...")).toThrow(/Unknown state backend/);
     });
 
