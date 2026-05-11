@@ -4,7 +4,7 @@
  * Multi-provider LLM routing with 3 orthogonal resilience states:
  * rate-limit ≠ quota-exhausted ≠ circuit-broken.
  *
- * @see https://github.com/eleata/resilient-llm-router (Python original)
+ * @see https://github.com/hernaninverso/resilient-llm-router (Python original)
  */
 
 export { Router, router, looksLikeQuotaExhausted, inferQuotaPeriod } from "./core";

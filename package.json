@@ -31,11 +31,11 @@
   "author": "Hern\u00e1n Inverso <hernaninverso@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eleata/resilient-llm-router-ts.git"
+    "url": "git+https://github.com/hernaninverso/resilient-llm-router-ts.git"
   },
-  "homepage": "https://github.com/eleata/resilient-llm-router-ts#readme",
+  "homepage": "https://github.com/hernaninverso/resilient-llm-router-ts#readme",
   "bugs": {
-    "url": "https://github.com/eleata/resilient-llm-router-ts/issues"
+    "url": "https://github.com/hernaninverso/resilient-llm-router-ts/issues"
   },
   "engines": {
     "node": ">=18"

@@ -8,7 +8,7 @@ Multi-provider LLM routing with **3 orthogonal resilience states**:
 
 > A 429 with body `"You exceeded your daily limit"` and a 429 with `Retry-After: 60` are semantically different. Most routers treat them the same and waste hundreds of calls retrying every minute against an exhausted free-tier provider. This library separates the two so each gets the cooldown it deserves.
 
-This is the TypeScript port of [`resilient-llm-router`](https://github.com/eleata/resilient-llm-router) (Python).
+This is the TypeScript port of [`resilient-llm-router`](https://github.com/hernaninverso/resilient-llm-router) (Python).
 
 > **Status: alpha (`0.1.0-alpha.0`)**. API surface is stable for the in-memory backend. Persistence backends (SQLite, Postgres) and the `probes` health helper from the Python lib are deferred to `0.2.x`.
 
@@ -143,5 +143,5 @@ MIT — see [LICENSE](./LICENSE).
 
 ## See also
 
-- [resilient-llm-router](https://github.com/eleata/resilient-llm-router) — the original Python library this port is based on.
+- [resilient-llm-router](https://github.com/hernaninverso/resilient-llm-router) — the original Python library this port is based on.
 - [OmniRoute PR #2116](https://github.com/diegosouzapw/OmniRoute/pull/2116) — the same patterns landed upstream in OmniRoute's circuit breaker (issue #2100).
